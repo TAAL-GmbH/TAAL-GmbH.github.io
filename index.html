@@ -55,6 +55,72 @@
               href="https://github.com/TAAL-GmbH/taal-client">https://github.com/TAAL-GmbH/taal-client</a>
           </p>
 
+          <h3>Instructions</h3>
+
+          <p>1. You will need to create a free account with Taal at <a href="https://console.taal.com/register">https://console.taal.com/register</a></p>
+
+          <p>2. Log in and then create a new API Key in the KEYS section.</p>
+
+          <p>3. Register the API key with your instance of Taal Client (taal-client register <apikey>)</p>
+
+          <p>4. Start the Taal Client (taal-client start)</p>
+          
+          <pre>
+Usage
+-----
+taal-client register <api-key>
+  Creates a private key which is held locally, and sends the public key to Taal to be linked to an existing API key.
+
+taal-client start
+  Starts listening for requests on :9500.  This value can be changed with the LISTEN environment variable.
+
+  All requests will be sent to https://mapi.taal.com by default unless overridden with the MAPI_URL environment variable.
+
+Environment variables
+---------------------
+  LISTEN
+  TAAL_URL
+  TAAL_TIMEOUT
+
+Example
+-------
+  LISTEN=localhost:8080 MAPI_URL=http://localhost:4000 ./taal_client start
+
+          </pre>
+
+          <h3>API keys</h3>
+          <p>
+            To use the Taal Client you will need a valid API key.  This can be obtained from <a href="https://console.taal.com">https://console.taal.com</a>
+          </p>
+
+          <h3>cURL example</h3>
+          <p>
+            To write data, you fire a POST request to http://localhost:9500/api/v1/write.  The payload of the POST will be written
+            to the blockchain along with the MIME type that's provided in the Content-Type header.</p>
+            
+            <p>Optionally, there are 2 additional headers that can be set:
+            <br />  
+            1. X-Tag - the value of this header will be prefixed to the MIME type and payload in the transaction.
+            <br />
+            2. X-FeesRequired - if this header exists and it is set to "true", Taal' servers will construct transactions with
+            additional fees for the miners.
+            </p>
+
+            </header>
+            <pre>
+curl \
+--location \
+--request POST 'http://localhost:9500/api/v1/write' \
+--header 'X-FeesRequired: true' \
+--header 'Authorization: Bearer testnet_00000000000000000000000000000000' \
+--header 'Content-Type: text/plain' \
+--data-raw 'Hello world!'
+            </pre>
+  
+            An example transaction can be seen at <a href="https://test.whatsonchain.com/tx/659ea82b9abcbfdbaaf168b24ad164f0be7e3b50e9c51dcff275a8d5a44e12ed">https://test.whatsonchain.com/tx/659ea82b9abcbfdbaaf168b24ad164f0be7e3b50e9c51dcff275a8d5a44e12ed</a> 
+
+          </p>
+
 
         </div>
       </div>
