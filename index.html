@@ -28,23 +28,23 @@
           <p>Select your operating system family:</p>
 
           <a role="button" id="btn-download-linux" class="btn btn-outline-dark btn-download"
-            href="/linux/taal-client_db499c35ec63e8031c09514459c8051bbd5b44dd">
+            href="/linux/ttaal-client_4a6ff190c61536527b0eb8b26b02778069573412">
             Linux<br />
             <img class="logo" src="/media/img/linux.svg" alt="Linux Logo" />
           </a>
           <a role="button" class="btn btn-outline-dark btn-download"
-            href="/darwin/taal-client_db499c35ec63e8031c09514459c8051bbd5b44dd">
+            href="/darwin/ttaal-client_4a6ff190c61536527b0eb8b26b02778069573412">
             macOS<br />
             <img class="logo" src="/media/img/apple.png" alt="Apple Logo" />
           </a>
           <a role="button" class="btn btn-outline-dark btn-download"
-            href="/windows/taal-client_db499c35ec63e8031c09514459c8051bbd5b44dd">
+            href="/windows/ttaal-client_4a6ff190c61536527b0eb8b26b02778069573412.exe">
             Windows<br />
             <img class="logo" src="/media/img/windows.svg" alt="Windows Logo" />
           </a>
 
           <a role="button" class="btn btn-outline-dark btn-download"
-            href="/assets/index.html">
+            href="/media/index.html">
             Example<br />
           </a>
 
@@ -76,15 +76,18 @@ taal-client start
 
   All requests will be sent to https://mapi.taal.com by default unless overridden with the MAPI_URL environment variable.
 
+  DEBUG = 1 will log all transactions to console
+
 Environment variables
 ---------------------
   LISTEN
   TAAL_URL
   TAAL_TIMEOUT
+  DEBUG
 
 Example
 -------
-  LISTEN=localhost:8080 TAAL_URL=http://localhost:4000 TAAL_TIMEOUT=1m ./taal_client start
+  DEBUG=1 LISTEN=localhost:8080 TAAL_URL=http://localhost:4000 TAAL_TIMEOUT=1m ./taal_client start
   
           </pre>
 
