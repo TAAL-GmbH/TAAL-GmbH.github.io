@@ -28,17 +28,17 @@
           <p>Select your operating system family:</p>
 
           <a role="button" id="btn-download-linux" class="btn btn-outline-dark btn-download"
-            href="/linux/ttaal-client_ff1aa9e944b72e33a95cc8bdb9ada3eafd9fb409">
+            href="/linux/taal-client_ff1aa9e944b72e33a95cc8bdb9ada3eafd9fb409">
             Linux<br />
             <img class="logo" src="/media/img/linux.svg" alt="Linux Logo" />
           </a>
           <a role="button" class="btn btn-outline-dark btn-download"
-            href="/darwin/ttaal-client_ff1aa9e944b72e33a95cc8bdb9ada3eafd9fb409">
+            href="/darwin/taal-client_ff1aa9e944b72e33a95cc8bdb9ada3eafd9fb409">
             macOS<br />
             <img class="logo" src="/media/img/apple.png" alt="Apple Logo" />
           </a>
           <a role="button" class="btn btn-outline-dark btn-download"
-            href="/windows/ttaal-client_ff1aa9e944b72e33a95cc8bdb9ada3eafd9fb409.exe">
+            href="/windows/taal-client_ff1aa9e944b72e33a95cc8bdb9ada3eafd9fb409.exe">
             Windows<br />
             <img class="logo" src="/media/img/windows.svg" alt="Windows Logo" />
           </a>
@@ -101,12 +101,9 @@ Example
             To write data, you fire a POST request to http://localhost:9500/api/v1/write.  The payload of the POST will be written
             to the blockchain along with the MIME type that's provided in the Content-Type header.</p>
             
-            <p>Optionally, there are 2 additional headers that can be set:
+            <p>Optionally, there is an additional header that can be set:
             <br />  
-            1. X-Tag - the value of this header will be prefixed to the MIME type and payload in the transaction.
-            <br />
-            2. X-FeesRequired - if this header exists and it is set to "true", Taal' servers will construct transactions with
-            additional fees for the miners.
+              X-Tag - the value of this header will be prefixed to the MIME type and payload in the transaction.
             </p>
 
             </header>
@@ -114,7 +111,6 @@ Example
 curl \
 --location \
 --request POST 'http://localhost:9500/api/v1/write' \
---header 'X-FeesRequired: true' \
 --header 'Authorization: Bearer testnet_00000000000000000000000000000000' \
 --header 'Content-Type: text/plain' \
 --data-raw 'Hello world!'
